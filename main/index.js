@@ -20,6 +20,7 @@ class Invitation {
     }
     sendInvitation() {
         let inviteMessage = 'hello ' + this.toPerson + ', please come to my office';
+        return inviteMessage;
     }
 }
 
@@ -58,17 +59,9 @@ class HeadOfDepartment extends Person {
     }
 
     inviteStaff(lecturer, message) {
-        let invitation = new Invitation(lecturer.firstName, message);
-        return invitation;
+        let invitation = new Invitation(lecturer, message);
+        return invitation.sendInvitation();
     }
 }
 
 
-
-export {
-    Email,
-    Invitation,
-    Person,
-    Lecturer,
-    HeadOfDepartment
-}
